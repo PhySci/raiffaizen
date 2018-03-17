@@ -34,5 +34,4 @@ class FedRank():
         '''
         X_group = X.groupby(group_field)
         rename_dict = {col: col + '_rank' for col in features}
-        c = X_group[features].transform(lambda x: x.rank()).astype(int).rename(columns=rename_dict)
-        return X.merge(c, left_index=True, right_index=True, how='left')
+        return X_group[features].transform(lambda x: x.rank()).astype(int).rename(columns=rename_dict)
