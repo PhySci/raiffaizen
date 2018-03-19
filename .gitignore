@@ -1,5 +1,7 @@
 /env
 /.ipynb_checkpoints
-/data/test_set.csv
-/data/train_set.csv
+/data
 /.idea
+
+/.env
+/__pycache__
