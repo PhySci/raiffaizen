@@ -40,8 +40,8 @@ def get_target_distances(df):
     :param df:
     :return:
     '''
-    dist_home_sq = (df.pos_address_lat_mean-df.home_add_lat_mean)**2+(df.pos_address_lon_mean-df.home_add_lon_mean)**2
-    dist_work_sq = (df.pos_address_lat_mean-df.work_add_lat_mean)**2+(df.pos_address_lon_mean-df.work_add_lon_mean)**2
+    dist_home_sq = (df.pos_address_lat-df.home_add_lat)**2+(df.pos_address_lon-df.home_add_lon)**2
+    dist_work_sq = (df.pos_address_lat-df.work_add_lat)**2+(df.pos_address_lon-df.work_add_lon)**2
     return pd.concat([dist_home_sq, dist_work_sq], axis=1).rename(columns = {0: 'dist_home', 1: 'dist_work'} )
 
 
